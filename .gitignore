@@ -90,3 +90,7 @@ docs/node_modules/
 *.tar.gz
 *.rar
 
+# Keep assets (images, etc.)
+!assets/
+!assets/**
+

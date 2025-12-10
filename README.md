@@ -1,11 +1,14 @@
 <div align="center">
 
+<img src="assets/images/yakt.png" alt="Yakt Logo" width="200" height="200">
+
 # Yakt
 
 **JavaScript-powered YAML templating framework**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![GitHub release](https://img.shields.io/github/release/chrisjhchung/yakt.svg)](https://github.com/chrisjhchung/yakt/releases)
+[![GitHub Sponsors](https://img.shields.io/github/sponsors/chrisjhchung?logo=github&style=flat)](https://github.com/sponsors/chrisjhchung)
 
 *Build reusable YAML components with JavaScript, just like React for HTML*
 
@@ -204,6 +207,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 <div align="center">
 
-[Report Bug](https://github.com/chrisjhchung/yakt/issues) • [Request Feature](https://github.com/chrisjhchung/yakt/issues) • [Documentation](https://chrisjhchung.github.io/yakt/)
+[Report Bug](https://github.com/chrisjhchung/yakt/issues) • [Request Feature](https://github.com/chrisjhchung/yakt/issues) • [Documentation](https://chrisjhchung.github.io/yakt/) • [Sponsor](https://github.com/sponsors/chrisjhchung)
 
 </div>

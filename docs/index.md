@@ -5,6 +5,9 @@ hero:
   name: "Yakt"
   text: "YAML Templating Framework"
   tagline: Build reusable YAML components with JavaScript, just like React for HTML
+  image:
+    src: /yakt/assets/images/yakt.png
+    alt: Yakt Logo
   actions:
     - theme: brand
       text: Get Started

@@ -11,6 +11,7 @@ export default defineConfig({
     /^https?:\/\/localhost/,
     /^http:\/\/localhost:5173/
   ],
+  assetsDir: 'assets',
   
   themeConfig: {
     nav: [
