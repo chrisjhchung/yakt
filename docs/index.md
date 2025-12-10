@@ -15,6 +15,10 @@ hero:
     - theme: alt
       text: View on GitHub
       link: https://github.com/chrisjhchung/yakt
+    - theme: alt
+      text: Sponsor
+      link: https://github.com/sponsors/chrisjhchung
+      icon: heart
 
 features:
   - title: Component-Based

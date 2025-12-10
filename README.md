@@ -8,7 +8,6 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![GitHub release](https://img.shields.io/github/release/chrisjhchung/yakt.svg)](https://github.com/chrisjhchung/yakt/releases)
-[![GitHub Sponsors](https://img.shields.io/github/sponsors/chrisjhchung?logo=github&style=flat)](https://github.com/sponsors/chrisjhchung)
 
 *Build reusable YAML components with JavaScript, just like React for HTML*
 

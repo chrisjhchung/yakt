@@ -66,6 +66,11 @@ export default defineConfig({
       { icon: 'github', link: 'https://github.com/chrisjhchung/yakt' }
     ],
     
+    sponsor: {
+      text: 'Sponsor this project',
+      link: 'https://github.com/sponsors/chrisjhchung'
+    },
+    
     footer: {
       message: 'Released under the MIT License.',
       copyright: `Copyright © ${new Date().getFullYear()} Yakt Contributors`
