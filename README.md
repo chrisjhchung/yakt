@@ -5,11 +5,11 @@
 **JavaScript-powered YAML templating framework**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![GitHub release](https://img.shields.io/github/release/YOUR_USERNAME/yakt.svg)](https://github.com/YOUR_USERNAME/yakt/releases)
+[![GitHub release](https://img.shields.io/github/release/chrisjhchung/yakt.svg)](https://github.com/chrisjhchung/yakt/releases)
 
 *Build reusable YAML components with JavaScript, just like React for HTML*
 
-[Documentation](https://YOUR_USERNAME.github.io/yakt/) • [Examples](./docs/examples/) • [Installation](#installation)
+[Documentation](https://chrisjhchung.github.io/yakt/) • [Examples](./docs/examples/) • [Installation](#installation)
 
 </div>
 
@@ -29,16 +29,16 @@
 
 **From Pre-built Binaries:**
 
-Download the latest release for your platform from the [Releases](https://github.com/YOUR_USERNAME/yakt/releases) page.
+Download the latest release for your platform from the [Releases](https://github.com/chrisjhchung/yakt/releases) page.
 
 ```bash
 # Linux/macOS
-wget https://github.com/YOUR_USERNAME/yakt/releases/download/v0.0.1/yakt-linux-x64
+wget https://github.com/chrisjhchung/yakt/releases/download/v0.0.1/yakt-linux-x64
 chmod +x yakt-linux-x64
 sudo mv yakt-linux-x64 /usr/local/bin/yakt
 
 # Or from source
-git clone https://github.com/YOUR_USERNAME/yakt.git
+git clone https://github.com/chrisjhchung/yakt.git
 cd yakt
 npm install && npm run build
 npm link
@@ -105,7 +105,7 @@ spec:
 
 ## 📖 Documentation
 
-Full documentation is available at [docs/](./docs/) or visit the [online docs](https://YOUR_USERNAME.github.io/yakt/).
+Full documentation is available at [docs/](./docs/) or visit the [online docs](https://chrisjhchung.github.io/yakt/).
 
 - [Installation Guide](./docs/guide/installation.md)
 - [Quick Start](./docs/guide/quick-start.md)
@@ -155,7 +155,7 @@ yakt/
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/yakt.git
+git clone https://github.com/chrisjhchung/yakt.git
 cd yakt
 
 # Install dependencies
@@ -204,8 +204,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 <div align="center">
 
-Made with ❤️ by the Yakt contributors
-
-[Report Bug](https://github.com/YOUR_USERNAME/yakt/issues) • [Request Feature](https://github.com/YOUR_USERNAME/yakt/issues) • [Documentation](https://YOUR_USERNAME.github.io/yakt/)
+[Report Bug](https://github.com/chrisjhchung/yakt/issues) • [Request Feature](https://github.com/chrisjhchung/yakt/issues) • [Documentation](https://chrisjhchung.github.io/yakt/)
 
 </div>
