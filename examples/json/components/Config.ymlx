@@ -1,0 +1,11 @@
+export default function Config(props: { app: string; version: string }) {
+    return {
+        application: props.app,
+        version: props.version,
+        metadata: {
+            created: new Date().toISOString(),
+            environment: "development"
+        }
+    };
+}
+

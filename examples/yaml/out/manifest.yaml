@@ -1,0 +1,80 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-yaml-app
+  labels:
+    app: my-yaml-app
+    version: 1.0.0
+    environment: production
+  annotations:
+    yakt.generated: '2025-12-10T05:44:51.997Z'
+    deployment.kubernetes.io/revision: '1'
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: my-yaml-app
+  template:
+    metadata:
+      labels:
+        app: my-yaml-app
+        version: 1.0.0
+    spec:
+      containers:
+        - name: my-yaml-app
+          image: myapp:1.0.0
+          ports:
+            - containerPort: 8080
+              name: http
+          env:
+            - name: ENVIRONMENT
+              value: production
+            - name: APP_VERSION
+              value: 1.0.0
+            - name: GENERATED_AT
+              value: '2025-12-10T05:44:51.997Z'
+          resources:
+            requests:
+              cpu: 500m
+              memory: 512Mi
+            limits:
+              cpu: 1000m
+              memory: 1Gi
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: my-yaml-app-config
+  labels:
+    app: my-yaml-app
+    version: 1.0.0
+    environment: production
+  annotations:
+    yakt.generated: '2025-12-10T05:44:51.997Z'
+    yakt.version: 1.0.0
+data:
+  APP_NAME: my-yaml-app
+  APP_VERSION: 1.0.0
+  ENVIRONMENT: production
+  REPLICAS: '3'
+  GENERATED_AT: '2025-12-10T05:44:51.997Z'
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-yaml-app-service
+  labels:
+    app: my-yaml-app
+    version: 1.0.0
+  annotations:
+    yakt.build.timestamp: '2025-12-10T05:44:51.996Z'
+    yakt.environment: production
+spec:
+  selector:
+    app: my-yaml-app
+  ports:
+    - port: 80
+      targetPort: 8080
+      protocol: TCP
+      name: http
+  type: LoadBalancer

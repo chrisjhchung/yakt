@@ -1,0 +1,36 @@
+{
+    "name": "yakt",
+    "version": "0.0.1",
+    "type": "module",
+    "bin": {
+      "yakt": "./dist/cli.js"
+    },
+    "scripts": {
+      "build": "tsc && node scripts/add-shebang.js",
+      "start": "npm run build && node ./dist/cli.js compile examples/yaml/Manifest.ymlx",
+      "test": "node ./dist/cli.js compile examples/yaml/Manifest.ymlx",
+      "test:yaml": "node ./dist/cli.js compile examples/yaml/Manifest.ymlx",
+      "test:json": "node ./dist/cli.js compile examples/json/Manifest.ymlx",
+      "package": "pkg . --out-path bin"
+    },
+    "pkg": {
+      "scripts": [
+        "dist/**/*.js"
+      ],
+      "assets": [
+        "package.json",
+        "node_modules/**/*"
+      ]
+    },
+    "dependencies": {
+      "js-yaml": "^4.1.1",
+      "typescript": "^5.9.3"
+    },
+    "devDependencies": {
+      "@types/js-yaml": "^4.0.9",
+      "@types/node": "^20.5.1",
+      "pkg": "^5.8.1",
+      "ts-node": "^10.9.2"
+    }
+  }
+  

@@ -1,0 +1,11 @@
+application: my-json-app
+version: 1.0.0
+metadata:
+  created: '2025-12-10T05:25:43.568Z'
+  environment: development
+---
+type: application
+name: json-example
+settings:
+  debug: true
+  port: 3000

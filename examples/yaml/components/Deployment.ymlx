@@ -1,0 +1,76 @@
+export default function Deployment(props: {
+    name: string;
+    image: string;
+    version: string;
+    environment?: string;
+}) {
+    const env = props.environment || "development";
+    const timestamp = new Date().toISOString();
+
+    // Computed values based on state
+    const replicas = env === "production" ? 3 : 1;
+    const imageTag = `${props.image}:${props.version}`;
+    const resources = env === "production"
+        ? {
+            requests: { cpu: "500m", memory: "512Mi" },
+            limits: { cpu: "1000m", memory: "1Gi" }
+        }
+        : {
+            requests: { cpu: "100m", memory: "128Mi" }
+        };
+
+    return {
+        apiVersion: "apps/v1",
+        kind: "Deployment",
+        metadata: {
+            name: props.name,
+            labels: {
+                app: props.name,
+                version: props.version,
+                environment: env
+            },
+            annotations: {
+                "yakt.generated": timestamp,
+                "deployment.kubernetes.io/revision": "1"
+            }
+        },
+        spec: {
+            replicas: replicas,
+            selector: {
+                matchLabels: {
+                    app: props.name
+                }
+            },
+            template: {
+                metadata: {
+                    labels: {
+                        app: props.name,
+                        version: props.version
+                    }
+                },
+                spec: {
+                    containers: [{
+                        name: props.name,
+                        image: imageTag,
+                        ports: [{
+                            containerPort: 8080,
+                            name: "http"
+                        }],
+                        env: [{
+                            name: "ENVIRONMENT",
+                            value: env
+                        }, {
+                            name: "APP_VERSION",
+                            value: props.version
+                        }, {
+                            name: "GENERATED_AT",
+                            value: timestamp
+                        }],
+                        resources: resources
+                    }]
+                }
+            }
+        }
+    };
+}
+

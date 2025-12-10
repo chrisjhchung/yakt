@@ -1,0 +1,68 @@
+import Config from "./components/Config.ymlx";
+import Deployment from "./components/Deployment.ymlx";
+
+/**
+ * Yakt Advantages Demo:
+ * 
+ * 1. STATE: Centralized configuration that can be reused across components
+ * 2. COMPUTED VALUES: Dynamic calculations based on state (replicas, resources, timestamps)
+ * 3. TIME: Real-time timestamps generated at compile time
+ * 4. CONDITIONAL LOGIC: Different values based on environment (production vs development)
+ */
+
+// State: Define application configuration
+const appConfig = {
+    name: "my-yaml-app",
+    version: "1.0.0",
+    image: "myapp",
+    environment: "production" // Change to "development" to see different resource allocation
+};
+
+// Computed: Generate timestamp for this build (computed at compile time)
+const buildTimestamp = new Date().toISOString();
+
+export default [
+    // Component with computed values (replicas, resources based on environment)
+    Deployment({
+        name: appConfig.name,
+        image: appConfig.image,
+        version: appConfig.version,
+        environment: appConfig.environment
+    }),
+
+    // Component with state and computed metadata
+    Config({
+        app: appConfig.name,
+        version: appConfig.version,
+        environment: appConfig.environment
+    }),
+
+    // Inline resource showing computed values
+    {
+        apiVersion: "v1",
+        kind: "Service",
+        metadata: {
+            name: `${appConfig.name}-service`,
+            labels: {
+                app: appConfig.name,
+                version: appConfig.version
+            },
+            annotations: {
+                "yakt.build.timestamp": buildTimestamp,
+                "yakt.environment": appConfig.environment
+            }
+        },
+        spec: {
+            selector: {
+                app: appConfig.name
+            },
+            ports: [{
+                port: 80,
+                targetPort: 8080,
+                protocol: "TCP",
+                name: "http"
+            }],
+            type: appConfig.environment === "production" ? "LoadBalancer" : "ClusterIP"
+        }
+    }
+];

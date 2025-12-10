@@ -1,0 +1,14 @@
+import Config from "./components/Config.ymlx";
+
+export default [
+    Config({ app: "my-json-app", version: "1.0.0" }),
+    {
+        type: "application",
+        name: "json-example",
+        settings: {
+            debug: true,
+            port: 3000
+        }
+    }
+];
+
