@@ -2,8 +2,6 @@
 
 <img src="assets/images/yakt.png" alt="Yakt Logo" width="200" height="200">
 
-# Yakt
-
 **JavaScript-powered YAML templating framework**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
